@@ -1,10 +1,12 @@
 FROM centos:7
 
+ADD /contents /
+
 RUN yum -y install epel-release
 
 RUN yum groupinstall "Server with GUI" "Xfce" -y
 
-RUN yum -y install wget curl git firefox openssh-server passwd x2goserver-xsession; yum clean all
+RUN yum -y install wget curl git firefox openssh-server passwd x2goserver-xsession google-chrome-stable; yum clean all
 
 ADD ./start.sh /start.sh
 
